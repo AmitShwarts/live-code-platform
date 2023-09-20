@@ -1,0 +1,16 @@
+{
+  "name": "live-code-platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AmitShwarts/live-code-platform.git",
+  "author": "Amit Shwarts <amit.shwarts@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:web": "yarn workspace live-code-platform-web-client build",
+    "start:web": "yarn workspace live-code-platform-web-client start"
+  }
+}
