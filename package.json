@@ -12,5 +12,6 @@
   "scripts": {
     "build:web": "yarn workspace live-code-platform-web-client build",
     "start:web": "yarn workspace live-code-platform-web-client start"
-  }
+  },
+  "packageManager": "yarn@3.6.3"
 }
