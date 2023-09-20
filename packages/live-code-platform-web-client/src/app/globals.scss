@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-$textBody: white;
-$primary: rgba(76, 0, 255, 1);
+$textBody: #F4F1DE;
+$primary: rgb(76, 0, 255);
 $secondary: rgb(76, 219, 255);
+$secondary2: #3D405B;
 
 div {
   box-sizing: border-box;
@@ -59,4 +60,10 @@ body {
     transform: translate(-50%, -50%);
     z-index: 1;
   }
+}
+
+main {
+  background-color: rgba(53, 53, 53, 0.2);
+  width: 100vw;
+  height: 100vh;
 }
