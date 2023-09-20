@@ -1,0 +1,27 @@
+@import '../../../../globals';
+
+#side-bar {
+  z-index: 2;
+  width: 30vw;
+  padding: 15px;
+
+  -webkit-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+
+  background-color: rgba(white, 0.08);
+
+  .section {
+    margin-bottom: 32px;
+
+    .title {
+      font-weight: bolder;
+      color: $secondary;
+    }
+  }
+}
+
+#output-text {
+  font-size: smaller;
+  margin-left: 10px;
+}

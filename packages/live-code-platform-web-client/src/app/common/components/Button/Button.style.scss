@@ -1,0 +1,22 @@
+@import '../../../globals.scss';
+
+$backgroundColor: $primary;
+
+.button {
+  background-color: $backgroundColor;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: fit-content;
+  cursor: pointer;
+
+  text-align: center;
+  font-weight: bold;
+
+  &:hover {
+    background-color: rgba($backgroundColor, 0.9);
+  }
+
+  &:active {
+    background-color: rgba($backgroundColor, 0.8);
+  }
+}
