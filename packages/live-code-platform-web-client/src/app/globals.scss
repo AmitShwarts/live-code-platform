@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$textBody: #F4F1DE;
+$primary: rgb(76, 0, 255);
+$secondary: rgb(76, 219, 255);
+$secondary2: #3D405B;
+
+div {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  color: $textBody;
+  background-color: #0d0d18;
+  overflow: hidden;
+
+  #blob1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10%);
+    z-index: 0;
+    
+    background: radial-gradient(circle at 50% 50%, $primary, #4c00ff00);
+    filter: blur(80px);
+    
+    width: 40vw;
+    height: 40vw;
+  }
+
+  #blob2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    transform: translate(-30%);
+
+    background: radial-gradient(circle at 50% 50%, $secondary, #4c00ff00);
+    filter: blur(80px);
+    
+    width: 30vw;
+    height: 30vw;
+  }
+
+  #effective {
+    -webkit-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 10, 0.9);
+    border-radius: 30px;
+    width: 90vw;
+    height: 85vh;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+main {
+  background-color: rgba(53, 53, 53, 0.2);
+  width: 100vw;
+  height: 100vh;
+}

@@ -10,8 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:web": "yarn workspace live-code-platform-web-client build",
-    "start:web": "yarn workspace live-code-platform-web-client start"
+    "start:web": "yarn workspace live-code-platform-web-client dev"
   },
   "packageManager": "yarn@3.6.3"
 }
