@@ -1,7 +1,7 @@
 'use client';
 
 import './Button.style.scss';
-import type { MouseEventHandler } from "react";
+import type { MouseEventHandler } from 'react';
 
 type ButtonProps = {
   label: string;
@@ -12,9 +12,9 @@ type ButtonProps = {
 
 export const Button = (props: ButtonProps) => {
   return (
-    <div 
-      style={props.style} 
-      className={`button ${props.className}`} 
+    <div
+      style={props.style}
+      className={`button ${props.className}`}
       onClick={props.onClick}
     >
       {props.label}
