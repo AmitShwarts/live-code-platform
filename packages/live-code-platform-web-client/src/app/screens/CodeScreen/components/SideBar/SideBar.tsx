@@ -1,5 +1,5 @@
 import './SideBar.style.scss';
-import { Button } from "@/app/common/components";
+import { Button } from '../../../../common/components/Button';
 
 export const SideBar = () => {
   return (

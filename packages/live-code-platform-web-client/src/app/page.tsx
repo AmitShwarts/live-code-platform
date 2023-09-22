@@ -1,4 +1,4 @@
-import { CodeScreen } from "./screens/CodeScreen";
+import { CodeScreen } from './screens/CodeScreen';
 
 const Home = () => {
   return (
