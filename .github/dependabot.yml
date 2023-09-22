@@ -14,4 +14,4 @@ updates:
     commit-message:
       prefix: "[npm] "
     schedule:
-      interval: "daily"
+      interval: "weekly"
