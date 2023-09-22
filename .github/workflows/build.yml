@@ -1,4 +1,4 @@
-name: Server Build
+name: Build
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: |
         yarn
-        yarn workspace live-code-platform-server build
+        yarn workspaces foreach run build
