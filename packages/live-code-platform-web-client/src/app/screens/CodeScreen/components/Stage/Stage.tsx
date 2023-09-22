@@ -7,7 +7,7 @@ type StageProps = {
 export const Stage = (props: StageProps) => {
   const code = props.code ?? `const text = 'hello world';\n` +
   `console.log('$$', text);\n`;
-  
+
   return (
     <div id="stage">
       <textarea>
