@@ -13,6 +13,8 @@ module.exports = {
     'max-len': ['warn', {code: 120, ignoreComments: true, ignoreStrings: true}],
     'default-case': 'off',
 
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-unused-vars': ['error', {args: 'all', argsIgnorePattern: '^_'}],
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],

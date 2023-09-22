@@ -10,13 +10,15 @@
     "packages/*"
   ],
   "scripts": {
-    "start:web": "yarn workspace live-code-platform-web-client dev",
-    "lint": "eslint . --ext js,ts,tsx --max-warnings 0",
     "postinstall": "husky install",
+    "test": ":",
+    "lint": "eslint . --ext js,ts,tsx --max-warnings 0",
+    "start:web": "yarn workspace live-code-platform-web-client dev",
     "syncpack": "syncpack list-mismatches",
     "syncpack:fix": "syncpack fix-mismatches",
     "pre-commit": "ts-node scripts/pre-commit",
-    "check-yarn-lock": ":"
+    "pre-push": "ts-node scripts/pre-push",
+    "check-yarn-lock": "ts-node scripts/check-yarn-lock"
   },
   "packageManager": "yarn@3.6.3",
   "dependencies": {
@@ -37,6 +39,7 @@
     "kleur": "^4.1.5",
     "lint-staged": "^14.0.1",
     "path": "^0.12.7",
+    "simple-git": "^3.19.1",
     "syncpack": "^11.2.1",
     "ts-node": "^10.9.1"
   }
