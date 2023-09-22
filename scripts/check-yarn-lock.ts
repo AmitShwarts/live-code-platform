@@ -34,8 +34,12 @@ const getPackagesWithChangedDeps = async (stagedPackageJsonsPaths: string[]): Pr
 
   await Promise.all(
     stagedPackageJsonsPaths.map(async (path) => {
-      const lastComittedFile = JSON.parse(await getLastComittedFileText(path));
-      const stagedFile = JSON.parse(await readFile(path, 'utf8'));
+      const [comittedFileText, stagedFileText] = await Promise.all([
+        getLastComittedFileText(path),
+        readFile(path, 'utf8'),
+      ])
+      const lastComittedFile = JSON.parse(comittedFileText);
+      const stagedFile = JSON.parse(stagedFileText);
 
       if (await hasChangedDeps({lastComittedFile, stagedFile})) {
         packagesWithChangedDeps.push(path);
