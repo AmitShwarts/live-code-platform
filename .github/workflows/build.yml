@@ -10,19 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout branch
+      uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - name: Determine Node.js version from .nvmrc
+      id: node_version
+      run: echo "node_version=$(cat .nvmrc) >> $GITHUB_OUTPUT"
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ steps.node_version.outputs.node_version }}
+
+    - name: Install dependencies
+      run: |
+        yarn --immutable
 
     - name: Build
-      run: |
-        yarn
+      run:
         yarn workspaces foreach run build
