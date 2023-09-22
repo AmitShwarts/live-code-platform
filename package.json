@@ -12,6 +12,7 @@
   "scripts": {
     "postinstall": "husky install",
     "test": ":",
+    "build": ":",
     "lint": "eslint . --ext js,ts,tsx --max-warnings 0",
     "start:web": "yarn workspace live-code-platform-web-client dev",
     "start:server": "yarn workspace live-code-platform-server start",
