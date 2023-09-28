@@ -7,6 +7,10 @@ updates:
       prefix: "[github-actions] "
     schedule:
       interval: "weekly"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -15,3 +19,7 @@ updates:
       prefix: "[npm] "
     schedule:
       interval: "weekly"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
