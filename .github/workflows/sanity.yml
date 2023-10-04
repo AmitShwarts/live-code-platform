@@ -1,4 +1,4 @@
-name: Build
+name: Sanity
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  build-lint-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -42,3 +42,9 @@ jobs:
     - name: Build
       run:
         yarn workspaces foreach run build
+
+    - name: Lint
+      run: yarn lint
+
+    - name: Test
+      run: yarn test

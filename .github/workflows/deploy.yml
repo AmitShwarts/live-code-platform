@@ -1,0 +1,71 @@
+name: GA
+
+on:
+  push:
+    branches: [ "master" ]
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_WEB_PROJECT_ID }}
+  REGION: ${{ secrets.GCP_WEB_PROJECT_REGION }}
+  WEB_CLIENT_SERVICE_ID: ${{ secrets.GCP_WEB_PROJECT_SERVICE_NAME }}
+  WEB_CLIENT_PACKAGE_PATH: ./packages/live-code-platform-web-client
+  SERVER_SERVICE_ID: ${{ secrets.GCP_SERVER_PROJECT_SERVICE_NAME }}
+  SERVER_PACKAGE_PATH: ./packages/live-code-platform-server
+  CREDENTIALS: ${{ secrets.GCP_WEB_CRED }}
+
+jobs:
+  web-client:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Google Auth
+        id: auth
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ env.CREDENTIALS }}'
+
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: ${{ env.WEB_CLIENT_SERVICE_ID }}
+          region: ${{ env.REGION }}
+          source: ${{ env.WEB_CLIENT_PACKAGE_PATH }}
+
+      - name: URL
+        run: echo ${{ steps.deploy.outputs.url }}
+
+  server:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Google Auth
+        id: auth
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ env.CREDENTIALS }}'
+
+      - name: Deploy
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: ${{ env.SERVER_SERVICE_ID }}
+          region: ${{ env.REGION }}
+          source: ${{ env.SERVER_PACKAGE_PATH }}
+
+      - name: URL
+        run: echo ${{ steps.deploy.outputs.url }}
