@@ -15,7 +15,7 @@
     "build": ":",
     "lint": "eslint . --ext js,ts,tsx --max-warnings 0",
     "start:web": "yarn workspace live-code-platform-web-client dev",
-    "start:server": "yarn workspace live-code-platform-server start",
+    "start:server": "yarn workspace live-code-platform-server dev",
     "syncpack": "syncpack list-mismatches",
     "syncpack:fix": "syncpack fix-mismatches",
     "pre-commit": "ts-node scripts/pre-commit",

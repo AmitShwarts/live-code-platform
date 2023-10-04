@@ -1,4 +1,4 @@
-name: GA
+name: Deploy - GA
 
 on:
   push:
