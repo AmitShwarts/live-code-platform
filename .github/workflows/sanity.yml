@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  sanity:
+  build-lint-test:
     runs-on: ubuntu-latest
 
     steps:
