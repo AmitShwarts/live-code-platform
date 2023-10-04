@@ -1,4 +1,4 @@
-name: RC
+name: Deploy - RC
 
 on:
   pull_request:
